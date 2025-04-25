@@ -32,8 +32,7 @@
 MS <a href="https://learn.microsoft.com/ru-ru/windows/win32/debug/pe-format" target="_blank">COFF</a> — стандартный формат файла для библиотек импорта, поддерживаемый большинством линкеров в среде Windows.
 <div itemscope itemtype="https://schema.org/CreativeWork">
 <img itemprop="image" src='logo.png' align='left' hspace='8' vspace='8' alt="ImpLib SDK"><b><span itemprop="name"><link itemprop="sameAs" href="https://www.wikidata.org/wiki/Q107297586">ImpLib SDK</span></b> — это <span itemprop="description">набор утилит для создания персонализированных библиотек импорта для DLL Windows (32 и 64 бит). SDK поддерживает расширенные возможности, как то: переходники <i>cdecl2stdcall</i>, импорт по ординалу, отключение стандартных переходников (<i>original thunk</i>)</span>.
-Существует множество нестандартных ситуаций, вроде использования DLL с соглашением о вызове <i>cdecl</i> в коде на Visual Basic 6,
-описание функций из DLL для PureBasic, переопределение декорации имён (<i>name mangling</i>) для существующих обьектников и т.д.
+Существуют задачи, вроде использования DLL с соглашением о вызове не поддерживаемым компилятором, переопределение декорации имён (<i>name mangling</i>) для существующих обьектников, разрешение конфликтов из-за экспорта одного и того же символа несколькими DLL и т.д.
 ImpLib SDK предназначен для решения подобных задач. Знание формата библиотек импорта не обязательно для использования данных утилит.
 <p>ImpLib SDK также полезен для преодоления юридических ограничений при распространении библиотек импорта для определенных DLL, таких как среда выполнения Microsoft<sup>&reg;</sup> C++.
 <a href="https://learn.microsoft.com/ru-ru/cpp/c-runtime-library/crt-library-features?view=msvc-160" target="_blank">Библиотеки импорта для CRT или STL</a> входят в состав Windows SDK.
