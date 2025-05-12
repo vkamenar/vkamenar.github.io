@@ -19,27 +19,41 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNG8M922" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div style='padding:10px;background:#E7E7E7'>
 <a href="https://github.com/ThalesGroup/MMS-compiler"><img alt="GitHub" src="/github.png" border=0 align=right></a>
-<div style='color:#708090;text-align:center'>[ <a href='/mms/'>English</a> | Espa&#241;ol | <a href='ind_ru.htm'>Pycc&#954;u&#250;</a> ]<br>
-<b style='color:#000'>Compilador de MMS</b><br>
+<div style='color:#708090;text-align:center'>[ <a href='/mms/'>English</a> | Espa&#241;ol | <a href='ind_ru.htm'>Pycc&#954;u&#250;</a> ]
+<h1 style='color:#000;font-size:125%;margin:0'>Compilador de MMS</h1>
 [ <a href='https://github.com/ThalesGroup/MMS-compiler/releases'>Descargar</a> | <a href='https://github.com/ThalesGroup/MMS-compiler/discussions'>Foros</a> ]</div>
 </div>
 <div style='background:#FFF;text-align:justify;padding:10px'>
 El <b>Servicio de Mensajería Multimedia</b> (en inglés, <i>Multimedia Messaging Service</i>) o MMS es una evolución del SMS. Admite texto con imágenes multimedia,
-secuencias animadas, sonido y vídeo para ofrecer una experiencia visual más atractiva para el usuario. El contenido visual se muestra y reproduce dentro de la
-aplicación de mensajería del destinatario. MMS es totalmente compatible con la mayoría de los móviles fabricados desde finales de 2001, incluyendo teléfonos
-básicos y smartphones: Android, Symbian, Blackberry, Windows Phone, entre otros. Apple soporta MMS con algunas limitaciones desde iOS 3. Algunos dispositivos
-admiten la <a href="https://www.celersms.com/html-mms-es.htm">combinación de MMS con HTML</a>.
+secuencias animadas, sonido y vídeo. El contenido visual se muestra y reproduce dentro de la aplicación de mensajería del destinatario.
+<p>MMS es compatible con la mayoría de los móviles fabricados desde finales de 2001, incluyendo teléfonos básicos (los de gama baja o características limitadas)
+y smartphones: Android, Symbian, Blackberry, Windows Phone, entre otros. Apple soporta MMS desde iOS 3, pero hace caso omiso del formateo SMIL, el cual sirve para
+especificar el diseño visual y transiciones en el contenido del MMS. Algunos dispositivos admiten la <a href="https://www.celersms.com/html-mms-es.htm">combinación
+de MMS con HTML</a>.
 <p>Las <a href="https://www.openmobilealliance.org/release/MMS/" target="_blank">especificaciones técnicas de MMS</a> fueron creadas originalmente por el Foro WAP
-y 3GPP. Actualmente, dichas especificaciones son manejadas por la <i>Open Mobile Alliance</i> (OMA). <a href="https://www.w3.org/TR/SMIL2/" target="_blank">SMIL</a>
-es el lenguaje utilizado para controlar la manera como se visualizan los MMS. SMIL para MMS es como HTML para las páginas web. La mayoría de las aplicaciones
-compatibles con MMS admiten un subconjunto de SMIL 2.0. Las versiones más recientes de SMIL no son ampliamente soportadas en el ámbito de MMS.
+y 3GPP. Actualmente, dichas especificaciones son administradas por la <i>Open Mobile Alliance</i> (OMA).
+<a href="https://www.w3.org/TR/SMIL2/" target="_blank">SMIL</a> es el lenguaje utilizado para controlar la manera como se visualizan los MMS. SMIL para MMS es
+como HTML para las páginas web. La mayoría de las aplicaciones compatibles con MMS admiten un subconjunto de SMIL 2.0. Las versiones más recientes de SMIL no son
+ampliamente soportadas en el ámbito de MMS.
 <p><img itemprop="image" src='logo.png' align='left' hspace='8' vspace='2' alt="Compilador de MMS">
-El <b><span itemprop="name"><link itemprop="sameAs" href="https://www.wikidata.org/wiki/Q131399102">Compilador de MMS</span></b> es <span itemprop="description">una
-herramienta de código abierto que permite generar archivos del Servicio de Mensajería Multimedia (MMS) a partir de un conjunto predefinido de archivos de entrada:
-texto, imágenes, audio y vídeo.</span> Esta herramienta es compatible con Windows y Linux (x86). No requiere dependencias ni componentes adicionales.
-<p>Por favor, consulte la <a href="https://github.com/ThalesGroup/MMS-compiler/blob/main/Overview.pdf">Descripción</a> y
+El <b><span itemprop="name"><link itemprop="sameAs" href="https://www.wikidata.org/wiki/Q131399102">Compilador de MMS</span></b> es
+<span itemprop="description">una herramienta de código abierto que permite generar archivos del Servicio de Mensajería Multimedia (MMS) a partir de un conjunto
+predefinido de archivos de entrada: texto, imágenes, audio y vídeo.</span> Esta herramienta es compatible con Windows y Linux (x86). No requiere dependencias ni
+componentes adicionales.
+<p>Por favor, consulte la <a href="https://github.com/ThalesGroup/MMS-compiler/blob/main/Overview.pdf">Introducción</a> y
 <a href="https://github.com/ThalesGroup/MMS-compiler/blob/main/UserGuide.pdf">Guía del Usuario</a> para obtener más detalles y recomendaciones prácticas
-sobre cómo compilar archivos MMS compatibles con la mayoría de los dispositivos móviles.
+sobre cómo compilar archivos MMS compatibles con distintos dispositivos móviles.
+<p>Al publicar un archivo MMS en un servidor web, se deben cumplir las siguientes condiciones:
+<ul>
+<li>La URL debe ser accesible a través del APN de MMS configurado en el móvil. Si el acceso se encuentra bloqueado por el operador, una solución temporal es
+configurar el APN de Internet como APN de MMS para que el móvil pueda descargar archivos MMS desde cualquier sitio web público. Esta solución alternativa debe
+usarse solo para pruebas, ya que descargar y reproducir archivos MMS desde cualquier sitio web podría no ser seguro.
+<li>El tipo MIME del archivo MMS debe ser <code>application/vnd.wap.mms-message</code>
+<li>Algunos clientes MMS no admiten redirecciones HTTP. Por lo tanto, no utilice acortadores de URL ni herramientas similares.
+<li>Los clientes MMS más antiguos no son compatibles con SSL/TLS. Por lo tanto, la URL debe usar HTTP, no HTTPS.
+</ul>
+<p>La mayoría de los teléfonos no muestran ningún error si falla la descarga del MMS. Por lo tanto, podría ser necesario usar un depurador (ej., <code>adb</code>
+para Android) para ver los mensajes de error exactos.
 <p><center><small>&#169; <span itemprop="copyrightYear">2018</span> - 2025 Grupo Thales
 <br>Autor: <span itemprop="author" itemscope itemtype="https://schema.org/Person"><a itemprop="url" href="https://www.celersms.com/org/vkamenar-es.htm"><span itemprop="name"><link itemprop="sameAs" href="https://www.facebook.com/vladimir.kamenar.1"><link itemprop="sameAs" href="https://x.com/KamenarVladimir"><link itemprop="sameAs" href="https://www.linkedin.com/in/vladimir-kamenar/"><link itemprop="sameAs" href="https://www.wikidata.org/wiki/Q106606516">Vladimir Kame&#241;ar</span></a></span>
 <br>Todos los derechos reservados</small></center>&nbsp;<br></div></body></html>
