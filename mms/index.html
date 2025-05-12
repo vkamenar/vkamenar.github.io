@@ -19,15 +19,16 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNG8M922" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div style='padding:10px;background:#E7E7E7'>
 <a href="https://github.com/ThalesGroup/MMS-compiler"><img alt="GitHub" src="/github.png" border=0 align=right></a>
-<div style='color:#708090;text-align:center'>[ English | <a href='ind_es.htm'>Espa&#241;ol</a> | <a href='ind_ru.htm'>Pycc&#954;u&#250;</a> ]<br>
-<b style='color:#000'>MMS Compiler</b><br>
+<div style='color:#708090;text-align:center'>[ English | <a href='ind_es.htm'>Espa&#241;ol</a> | <a href='ind_ru.htm'>Pycc&#954;u&#250;</a> ]
+<h1 style='color:#000;font-size:125%;margin:0'>MMS Compiler</h1>
 [ <a href='https://github.com/ThalesGroup/MMS-compiler/releases'>Download</a> | <a href='https://github.com/ThalesGroup/MMS-compiler/discussions'>Discussions</a> ]</div>
 </div>
 <div style='background:#FFF;text-align:justify;padding:10px' itemscope itemtype="https://schema.org/CreativeWork">
-The <b>Multimedia Messaging Service</b> (MMS) is an evolution of the SMS. It supports text with multimedia images, slide show, sound and video to provide
-a more eye-catching experience for the user. The visual content displays and plays within the recipients messaging application. MMS is fully supported in most
-mobiles manufactured since the end of 2001, including feature phones and smartphones: Android, Symbian, Blackberry, Windows Phone, among others. Apple supports
-MMS with some limitations since iOS 3. Some devices support <a href="https://www.celersms.com/html-mms.htm">combining MMS with HTML</a> markup.
+The <b>Multimedia Messaging Service</b> (MMS) is an evolution of the SMS. It supports text with multimedia images, slide show, sound and video. The visual
+content displays and plays within the recipients messaging application.
+<p>MMS is supported in most mobiles manufactured since the end of 2001, including feature phones and smartphones: Android, Symbian, Blackberry, Windows Phone,
+among others. Apple supports MMS since iOS 3, but SMIL formatting of the MMS is ignored (layout, transitions). Some devices support
+<a href="https://www.celersms.com/html-mms.htm">combining MMS with HTML</a> markup.
 <p>The <a href="https://www.openmobilealliance.org/release/MMS/" target="_blank">MMS technical specifications</a> were originally created by the WAP Forum and 3GPP.
 Currently, the specifications are maintained by the Open Mobile Alliance (OMA). <a href="https://www.w3.org/TR/SMIL2/" target="_blank">SMIL</a> is the language
 used to configure how the MMS is displayed. SMIL for MMS is like HTML for a web page. Most MMS-capable applications support a subset of SMIL 2.0. More recent
@@ -38,7 +39,18 @@ open-source tool which can be used to generate Multimedia Messaging Service (MMS
 This tool can be used in Windows or Linux (x86). It doesn't require any additional dependencies or components.
 <p>Please, check the <a href="https://github.com/ThalesGroup/MMS-compiler/blob/main/Overview.pdf">Overview</a> and
 <a href="https://github.com/ThalesGroup/MMS-compiler/blob/main/UserGuide.pdf">User's Guide</a> for more details and practical recommendations on how to compile
-MMS files compatible with most mobiles.
+MMS files for compatibility with different mobiles.
+<p>When publishing an MMS file to a webserver, the following conditions should be met:
+<ul>
+<li>The URL must be accessible through the MMS APN configured in the mobile. If it is blocked by the operator, a temporary workaround is to configure the Internet
+APN as the MMS APN to let the mobile download MMS files from any public website. This workaround should be used for testing only, as it might be unsafe to
+download and reproduce MMS files from any website.
+<li>The MIME type for the MMS file must be <code>application/vnd.wap.mms-message</code>
+<li>Some MMS clients don't support HTTP redirects. Therefore, don't use URL shorteners or similar tools.
+<li>Older MMS clients don't support SSL/TLS. Therefore, the URL should use plain HTTP, not HTTPS.
+</ul>
+<p>Most handsets don't display any error if the MMS download fails. Therefore, it might be necessary to use a debugger (e.g. <code>adb</code> for Android)
+to see the exact error messages.
 <p><center><small>&#169; <span itemprop="copyrightYear">2018</span> - 2025 Thales Group
 <br>Author: <span itemprop="author" itemscope itemtype="https://schema.org/Person"><a itemprop="url" href="https://www.celersms.com/org/vkamenar.htm"><span itemprop="name"><link itemprop="sameAs" href="https://www.facebook.com/vladimir.kamenar.1"><link itemprop="sameAs" href="https://x.com/KamenarVladimir"><link itemprop="sameAs" href="https://www.linkedin.com/in/vladimir-kamenar/"><link itemprop="sameAs" href="https://www.wikidata.org/wiki/Q106606516">Vladimir Kame&#241;ar</span></a></span>
 <br>All rights reserved</small></center>&nbsp;<br></div></body></html>
