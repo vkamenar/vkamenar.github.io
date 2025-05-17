@@ -2,12 +2,21 @@
 <html dir="ltr" lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8">
-<meta name="description" content="ImpLib SDK combines free programming tools for authoring custom import libraries with advanced features, like cdecl2stdcall conversion, importing by ordinal, removing original thunk.">
+<meta name="description" content="Learn how to install and use the ImpLib SDK to build custom import libraries for Windows DLL, providing compatibility with different programming environments and linkers.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="ImpLib SDK Guide">
-<meta property="og:description" content="ImpLib SDK combines free programming tools for authoring custom import libraries with advanced features, like cdecl2stdcall conversion, importing by ordinal, removing original thunk.">
+<meta property="og:description" content="Learn how to install and use the ImpLib SDK to build custom import libraries for Windows DLL, providing compatibility with different programming environments and linkers.">
 <meta property="og:image" content="https://vkamenar.github.io/implib-sdk/logo.png">
 <meta property="og:url" content="https://vkamenar.github.io/implib-sdk/EN.HTM">
+<style type=text/css>
+body{text-align:justify}
+h1{font-size:125%;margin:4px}
+.mnu{color:#708090}
+.nav{background:#e1f5fa;padding:10px;border:1px solid #abbbbf;display:inline-block}
+.tbl{border:1px solid #ddd;margin-left:auto;margin-right:auto;text-align:center}
+.high{background-color:#FF0}
+.btop{text-align:right}
+</style>
 <title>ImpLib SDK Guide</title>
 <link rel="canonical" href="https://vkamenar.github.io/implib-sdk/EN.HTM">
 <link rel="alternate" href="https://vkamenar.github.io/implib-sdk/EN.HTM" hreflang="en">
@@ -16,13 +25,13 @@
 <link rel="alternate" href="https://vkamenar.github.io/implib-sdk/EN.HTM" hreflang="x-default">
 <LINK REL="icon" HREF="favicon.ico" TYPE="image/x-icon"><LINK REL="shortcut icon" HREF="favicon.ico" TYPE="image/x-icon">
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MNG8M922');</script>
-</head><body style="text-align:justify">
+</head><body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNG8M922" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="top" itemscope itemtype="https://schema.org/Article"><meta itemprop="inLanguage" content="en">
-<center><span style='color:#708090'>[ English | <a href='ES.HTM'>Espa&#241;ol</a> | <a href='RU.HTM'>Pycc&#954;u&#250;</a> ]</span>
-<h1 itemprop="headline" style='font-size:125%;margin:4px'>ImpLib SDK Guide</h1><span style='color:#708090'>[ <a href='https://github.com/vkamenar/implib-sdk/releases'>Download</a> | <a href='https://github.com/vkamenar/implib-sdk/discussions'>Discussions</a> ]</span></center>
+<center><span class='mnu'>[ English | <a href='ES.HTM'>Espa&#241;ol</a> | <a href='RU.HTM'>Pycc&#954;u&#250;</a> ]</span>
+<h1 itemprop="headline">ImpLib SDK Guide</h1><span class='mnu'>[ <a href='https://github.com/vkamenar/implib-sdk/releases'>Download</a> | <a href='https://github.com/vkamenar/implib-sdk/discussions'>Discussions</a> ]</span></center>
 <p align="right">Publication date: <b itemprop="datePublished">2007-02-01</b><br>Last update: <b itemprop="dateModified">2025-04-20</b><br>Author: <span itemprop="author" itemscope itemtype="https://schema.org/Person"><a itemprop="url" href="https://www.celersms.com/org/vkamenar.htm"><b itemprop="name"><link itemprop="sameAs" href="https://www.facebook.com/vladimir.kamenar.1"><link itemprop="sameAs" href="https://x.com/KamenarVladimir"><link itemprop="sameAs" href="https://www.linkedin.com/in/vladimir-kamenar/"><link itemprop="sameAs" href="https://www.wikidata.org/wiki/Q106606516">Vladimir Kame&#241;ar</b></a></span>
-<div style="background:#e1f5fa;padding:10px;border:1px solid #abbbbf;display:inline-block">
+<div class="nav">
 <a href="#0">Installation and usage</a>
 <br><a href="#1">How does it work?</a>
 <br><a href="#2">DLL2DEF</a>
@@ -67,7 +76,7 @@ No compatibility issues detected. However, this linker expects a slightly differ
 compatibility with this linker it is necessary to turn on the <code>RENAME_AR_MEMBERS</code> configuration parameter. The same library can be used with the GNU
 Linker. The following table summarizes the compatibility status.
 </ul>
-<table cellpadding=4 style="border:1px solid #ddd;margin-left:auto;margin-right:auto;text-align:center">
+<table cellpadding=4 class="tbl">
 <tr><th>RENAME_AR_MEMBERS<th>Pelle's<br>(polink)<th>MS<th>GNU<br>(LD)<th>LLVM<br>(lld-link)
 <tr><td>0<td>&#10003;<td>&#10003;<td>&#10003;<td>&#10007;
 <tr><td>1<td>&#10007;<td>&#10007;<td>&#10003;<td>&#10003;
@@ -100,10 +109,10 @@ endlib
 in the same directory where the DEF-file is located. After completing the list, don't forget to add the <code>endlib</code> macro. Every symbol definition is
 created with the <code>implib</code> macro, followed by the DLL file name and the symbolic name of the function. You may specify the ordinal value instead of the
 symbolic name, prefixing it with 'ord.':<pre>
-   implib kernel32.dll, <span style="background-color:#FF0">ord.5</span>
+   implib kernel32.dll, <span class="high">ord.5</span>
 </pre>
 <p>If you want a symbol to be indexed by the linker with a different name, append another argument with the alias name:<pre>
-   implib kernel32.dll, CreateFileA, <span style="background-color:#FF0">CreateFile</span>
+   implib kernel32.dll, CreateFileA, <span class="high">CreateFile</span>
 </pre>
 <p>When referring to <code>CreateFile</code> in your object file, the linker will actually resolve it as <code>KERNEL32!CreateFileA</code>.
 Thus, by default, the 'A' suffix is not required in the object file. This feature is useful mostly for mangling symbolic names.
@@ -122,7 +131,7 @@ endlib
 </pre>
 <p>As you see, 32-bit STDCALL names are prefixed with an underscore (<code>_</code>) and suffixed with the <i>at</i> sign and a decimal number (<code>@#</code>). The decimal number is the size in bytes of the argument list. Usually, it equals to the number of arguments x4 because most arguments on the stack are either 32-bit or aligned to a 32-bit boundary (32 bits = 4 bytes).
 <p>This naming convention is not used in 64-bit mode. Therefore, if linking to the 64-bit KERNEL32.DLL, the list would look like follows:<pre>
-include 'src\<span style="background-color:#FF0">implib64.inc</span>'
+include 'src\<span class="high">implib64.inc</span>'
 
    ; KERNEL32.DLL
    implib kernel32.dll, CreateFileA
@@ -197,7 +206,7 @@ There is nothing you can't achieve by using the Windows API directly, but since 
 <p>Since <code>div</code> is the unsigned integer division mnemonic, we need to rename this function to something else.
 Steve Hutchesson (<i>Hutch</i>), the creator of the MASM32 SDK, suggested prefixing it with '<code>_crt_</code>' (there's a thread on this topic at masm32's official forum).
 So, here's the replacement:<pre>
-   implib msvcrt.dll, div, <span style="background-color:#FF0">_crt_</span>div
+   implib msvcrt.dll, div, <span class="high">_crt_</span>div
 </pre>
 <p>Do the same to <code>fabs</code> function. It is recommended adding a leading '<code>_</code>' preceding the thunk name to all function names not already starting with it, so that calling these functions would be possible via <code>invoke</code> thunk from MASM32. For example:<pre>
    ; MSVCRT.printf ord.742
@@ -205,11 +214,11 @@ So, here's the replacement:<pre>
 </pre>
 <p>It is recommended to update it in the following way:<pre>
    ; MSVCRT.printf ord.742
-   implib msvcrt.dll, printf, <span style="background-color:#FF0">_printf</span>
+   implib msvcrt.dll, printf, <span class="high">_printf</span>
 </pre>
 <p>The same definition using the ordinal value would be:<pre>
    ; MSVCRT.printf ord.742
-   implib msvcrt.dll, <span style="background-color:#FF0">ord.742</span>, _printf, __imp__printf
+   implib msvcrt.dll, <span class="high">ord.742</span>, _printf, __imp__printf
 </pre>
 <p>Since the real function name is lost when using its ordinal, it is recommended to specify the thunk name (<code>_printf</code>) and public import name (<code>__imp__printf</code>) explicitly this time. ImpLib won't complain if you don't specify them, but calling <code>printf()</code> will become more tricky.
 <p>Proceed compiling the library. Since ImpLib runs interpreted by the FASM's preprocessor and the def-file contains a huge number of functions, it might take some time to complete the task:<pre>
@@ -300,7 +309,7 @@ Take a look at the generated script file once again:<pre>
    pbimplib OpenAL32.dll, STDCALL, 0, alBuffer3f
 </pre>
 <p><code>alBuffer3f()</code> is not a STDCALL function and it doesn't receive 0 arguments. DLL2DEF just can't guess the number of arguments and the calling convention. Using "STDCALL, 0" just disables automatic stack fixing after calling the given function via thunk. The correct prototype should be:<pre>
-   pbimplib OpenAL32.dll, <span style="background-color:#FF0">CDECL, 5</span>, alBuffer3f
+   pbimplib OpenAL32.dll, <span class="high">CDECL, 5</span>, alBuffer3f
 </pre>
 <p>You can update all the other definitions or just use the already fixed script <code>src\PureBasic\openal32.def</code>. Now, let's compile it:<pre>
    <b>bin\fasm openal32.def Pbopenal.lib</b>
@@ -334,6 +343,6 @@ You can find multiple PureBasic OpenAL examples in the <a href="/pbopenal/">Pure
 <a href="https://github.com/vkamenar/implib-sdk/discussions">GitHub</a> or <a href="https://sourceforge.net/p/implib/discussion/">SourceForge</a>.<br>&nbsp;
 </div>
 </div>
-<div style="text-align:right"><a href="#top">Back to Top</a></div>
+<div class="btop"><a href="#top">Back to Top</a></div>
 <center><small>&#169; 2006 - 2025 <a href="https://www.celersms.com/org/vkamenar.htm">Vladimir Kame&#241;ar</a>
 <br>All rights reserved</small></center></body></html>
