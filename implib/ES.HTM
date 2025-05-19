@@ -2,12 +2,21 @@
 <html dir="ltr" lang="es">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8">
-<meta name="description" content="ImpLib SDK combina herramientas de desarrollo gratuitas para crear librerías de importación personalizadas con funciones avanzadas, como conversión cdecl2stdcall, importación por ordinal, eliminación de saltos (original thunk).">
+<meta name="description" content="Cómo instalar y utilizar ImpLib SDK para crear librerías de importación personalizadas para las DLL de Windows, compatibles con diferentes entornos de programación y enlazadores.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Guía de ImpLib SDK">
-<meta property="og:description" content="ImpLib SDK combina herramientas de desarrollo gratuitas para crear librerías de importación personalizadas con funciones avanzadas, como conversión cdecl2stdcall, importación por ordinal, eliminación de saltos (original thunk).">
+<meta property="og:description" content="Cómo instalar y utilizar ImpLib SDK para crear librerías de importación personalizadas para las DLL de Windows, compatibles con diferentes entornos de programación y enlazadores.">
 <meta property="og:image" content="https://vkamenar.github.io/implib-sdk/logo.png">
 <meta property="og:url" content="https://vkamenar.github.io/implib-sdk/ES.HTM">
+<style type=text/css>
+body{text-align:justify}
+h1{font-size:125%;margin:4px}
+.mnu{color:#708090}
+.nav{background:#e1f5fa;padding:10px;border:1px solid #abbbbf;display:inline-block}
+.tbl{border:1px solid #ddd;margin-left:auto;margin-right:auto;text-align:center}
+.high{background-color:#FF0}
+.btop{text-align:right}
+</style>
 <title>Guía de ImpLib SDK</title>
 <link rel="canonical" href="https://vkamenar.github.io/implib-sdk/ES.HTM">
 <link rel="alternate" href="https://vkamenar.github.io/implib-sdk/EN.HTM" hreflang="en">
@@ -16,13 +25,13 @@
 <link rel="alternate" href="https://vkamenar.github.io/implib-sdk/EN.HTM" hreflang="x-default">
 <LINK REL="icon" HREF="favicon.ico" TYPE="image/x-icon"><LINK REL="shortcut icon" HREF="favicon.ico" TYPE="image/x-icon">
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MNG8M922');</script>
-</head><body style="text-align:justify">
+</head><body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNG8M922" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="top" itemscope itemtype="https://schema.org/Article"><meta itemprop="inLanguage" content="es">
-<center><span style='color:#708090'>[ <a href='EN.HTM'>English</a> | Espa&#241;ol | <a href='RU.HTM'>Pycc&#954;u&#250;</a> ]</span>
-<h1 itemprop="headline" style='font-size:125%;margin:4px'>Guía de ImpLib SDK</h1><span style='color:#708090'>[ <a href='https://github.com/vkamenar/implib-sdk/releases'>Descargar</a> | <a href='https://github.com/vkamenar/implib-sdk/discussions'>Foros</a> ]</span></center>
+<center><span class='mnu'>[ <a href='EN.HTM'>English</a> | Espa&#241;ol | <a href='RU.HTM'>Pycc&#954;u&#250;</a> ]</span>
+<h1 itemprop="headline">Guía de ImpLib SDK</h1><span class='mnu'>[ <a href='https://github.com/vkamenar/implib-sdk/releases'>Descargar</a> | <a href='https://github.com/vkamenar/implib-sdk/discussions'>Foros</a> ]</span></center>
 <p align="right">Fecha de publicación: <b itemprop="datePublished">2007-02-01</b><br>Última actualización: <b itemprop="dateModified">2025-04-20</b><br>Autor: <span itemprop="author" itemscope itemtype="https://schema.org/Person"><a itemprop="url" href="https://www.celersms.com/org/vkamenar-es.htm"><b itemprop="name"><link itemprop="sameAs" href="https://www.facebook.com/vladimir.kamenar.1"><link itemprop="sameAs" href="https://x.com/KamenarVladimir"><link itemprop="sameAs" href="https://www.linkedin.com/in/vladimir-kamenar/"><link itemprop="sameAs" href="https://www.wikidata.org/wiki/Q106606516">Vladimir Kame&#241;ar</b></a></span>
-<div style="background:#e1f5fa;padding:10px;border:1px solid #abbbbf;display:inline-block">
+<div class="nav">
 <a href="#0">Instalación y uso</a>
 <br><a href="#1">¿Cómo funciona?</a>
 <br><a href="#2">DLL2DEF</a>
@@ -72,7 +81,7 @@ embargo, este <i>linker</i> requiere de una estructura de archivo de las librer�
 para compatibilidad con este <i>linker</i> es necesario activar el parámetro de configuración <code>RENAME_AR_MEMBERS</code>. La misma librería también se puede
 utilizar con el <i>linker de GNU</i>. La siguiente tabla resume el estado de compatibilidad.
 </ul>
-<table cellpadding=4 style="border:1px solid #ddd;margin-left:auto;margin-right:auto;text-align:center">
+<table cellpadding=4 class="tbl">
 <tr><th>RENAME_AR_MEMBERS<th>Pelle's<br>(polink)<th>MS<th>GNU<br>(LD)<th>LLVM<br>(lld-link)
 <tr><td>0<td>&#10003;<td>&#10003;<td>&#10003;<td>&#10007;
 <tr><td>1<td>&#10007;<td>&#10007;<td>&#10003;<td>&#10003;
@@ -107,9 +116,9 @@ endlib
 a menos que <code>implib.inc</code> o <code>implib64.inc</code> esté en el mismo directorio donde se encuentra el archivo DEF. Después de completar la lista, no
 olvide agregar la macro <code>endlib</code>. Cada definición de símbolo comienza con la macro <code>implib</code>, seguida por el nombre de DLL y el nombre
 simbólico de la función. Puede especificar el valor ordinal en lugar del nombre simbólico, colocando el prefijo 'ord.':<pre>
-   implib kernel32.dll, <span style="background-color:#FF0">ord.5</span>
+   implib kernel32.dll, <span class="high">ord.5</span>
 </pre>Si desea que el <i>linker</i> indexe un símbolo con un nombre público diferente, agregue otro argumento con el nombre que desee:<pre>
-   implib kernel32.dll, CreateFileA, <span style="background-color:#FF0">CreateFile</span>
+   implib kernel32.dll, CreateFileA, <span class="high">CreateFile</span>
 </pre>
 <p>De esta manera, cuando se hace referencia a <code>CreateFile</code> en el código objeto, el <i>linker</i> lo resolverá como <code>KERNEL32!CreateFileA</code>. Por lo tanto,
 no es necesario especificar el sufijo 'A'. Esta función es útil para traducir nombres simbólicos. Por ejemplo, las herramientas de MS asumen que la
@@ -129,7 +138,7 @@ endlib
 <p>Como puede ver, los nombres STDCALL en modo de 32 bits tienen como prefijo el signo de subrayado (<code>_</code>) y el sufijo es el signo de arroba seguido de un valor decimal (<code>@#</code>).
 Ese valor decimal es el tamaño en bytes de la lista de argumentos. Generalmente, este valor es el número de argumentos x4, ya que la mayoría de los argumentos son de 32 bits o se encuentran alineados a 32 bits (32 bits = 4 bytes).
 <p>Esta convención de nombres no se aplica en modo de 64 bits. Por lo tanto, si pretendemos enlazar con la versión de 64 bits de KERNEL32.DLL, el listado sería como sigue:<pre>
-include 'src\<span style="background-color:#FF0">implib64.inc</span>'
+include 'src\<span class="high">implib64.inc</span>'
 
    ; KERNEL32.DLL
    implib kernel32.dll, CreateFileA
@@ -221,7 +230,7 @@ librería de importación de Visual Studio original. Por eso MASM32 no incluye <
 </pre>
 <p>Dado que <code>div</code> es el mnemónico de división de enteros sin signo, necesitamos cambiar el nombre de esta función.
 Steve Hutchesson (<i>Hutch</i>), el creador del SDK de MASM32, sugirió agregar el prefijo '<code>_crt_</code>' (refiérase al foro oficial de masm32 para mayor detalle). Entonces, quedaría como sigue:<pre>
-   implib msvcrt.dll, div, <span style="background-color:#FF0">_crt_</span>div
+   implib msvcrt.dll, div, <span class="high">_crt_</span>div
 </pre>
 <p>Hagamos lo mismo con la función de <code>fabs</code>. Se recomienda agregar '<code>_</code>' como prefijo en el alias de salto (<i>thunk</i>) para todos los nombres de
 funciones que no comiencen con este caracter. Esto permite llamar a estas funciones a través de la macro <code>invoke</code> en MASM32. Por ejemplo:<pre>
@@ -337,7 +346,7 @@ directamente, sin utilizar saltos (sin <i>thunk</i>). Revisemos el listado gener
 </pre>
 <p><code>alBuffer3f()</code> no es una función STDCALL y no recibe 0 argumentos. DLL2DEF no puede adivinar la cantidad de argumentos y la convención de
 llamado. El uso de "STDCALL, 0" evita la restauración automática de la pila después del llamado a la función. El prototipo correcto debería ser:<pre>
-   pbimplib OpenAL32.dll, <span style="background-color:#FF0">CDECL, 5</span>, alBuffer3f
+   pbimplib OpenAL32.dll, <span class="high">CDECL, 5</span>, alBuffer3f
 </pre>
 <p>Puede actualizar las demás definiciones o simplemente usar el listado ya corregido en <code>src\PureBasic\openal32.def</code>. Compilemos:<pre>
    <b>bin\fasm openal32.def Pbopenal.lib</b>
@@ -374,6 +383,6 @@ Puede encontrar varios ejemplos de PureBasic con OpenAL en <a href="/pbopenal/in
 <a href="https://github.com/vkamenar/implib-sdk/discussions">GitHub</a> o <a href="https://sourceforge.net/p/implib/discussion/">SourceForge</a>.<br>&nbsp;
 </div>
 </div>
-<div style="text-align:right"><a href="#top">Volver arriba</a></div>
+<div class="btop"><a href="#top">Volver arriba</a></div>
 <center><small>&#169; 2006 - 2025 <a href="https://www.celersms.com/org/vkamenar-es.htm">Vladimir Kame&#241;ar</a>
 <br>Todos los derechos reservados</small></center></body></html>
