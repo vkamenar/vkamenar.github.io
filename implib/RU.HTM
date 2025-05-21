@@ -2,12 +2,21 @@
 <html dir="ltr" lang="ru">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8">
-<meta name="description" content="ImpLib SDK — это набор утилит для создания библиотек импорта, предоставляющий расширенные возможности, как то: переходники cdecl2stdcall, импорт по ординалу, отключение оригинальных санков (original thunk).">
+<meta name="description" content="Как установить и использовать ImpLib SDK для создания персонализированных библиотек импорта для DLL Windows, совместимых с различными средами программирования и линкерами.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Руководство по ImpLib SDK">
-<meta property="og:description" content="ImpLib SDK — это набор утилит для создания библиотек импорта, предоставляющий расширенные возможности, как то: переходники cdecl2stdcall, импорт по ординалу, отключение оригинальных санков (original thunk).">
+<meta property="og:description" content="Как установить и использовать ImpLib SDK для создания персонализированных библиотек импорта для DLL Windows, совместимых с различными средами программирования и линкерами.">
 <meta property="og:image" content="https://vkamenar.github.io/implib-sdk/logo.png">
 <meta property="og:url" content="https://vkamenar.github.io/implib-sdk/RU.HTM">
+<style type=text/css>
+body{text-align:justify}
+h1{font-size:125%;margin:4px}
+.mnu{color:#708090}
+.nav{background:#e1f5fa;padding:10px;border:1px solid #abbbbf;display:inline-block}
+.tbl{border:1px solid #ddd;margin-left:auto;margin-right:auto;text-align:center}
+.high{background-color:#FF0}
+.btop{text-align:right}
+</style>
 <title>Руководство по ImpLib SDK</title>
 <link rel="canonical" href="https://vkamenar.github.io/implib-sdk/RU.HTM">
 <link rel="alternate" href="https://vkamenar.github.io/implib-sdk/EN.HTM" hreflang="en">
@@ -16,13 +25,13 @@
 <link rel="alternate" href="https://vkamenar.github.io/implib-sdk/EN.HTM" hreflang="x-default">
 <LINK REL="icon" HREF="favicon.ico" TYPE="image/x-icon"><LINK REL="shortcut icon" HREF="favicon.ico" TYPE="image/x-icon">
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MNG8M922');</script>
-</head><body style="text-align:justify">
+</head><body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNG8M922" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="top" itemscope itemtype="https://schema.org/Article"><meta itemprop="inLanguage" content="ru">
-<center><span style='color:#708090'>[ <a href='EN.HTM'>English</a> | <a href='ES.HTM'>Espa&#241;ol</a> | Pycc&#954;u&#250; ]</span>
-<h1 itemprop="headline" style='font-size:125%;margin:4px'>Руководство по ImpLib SDK</h1><span style='color:#708090'>[ <a href='https://github.com/vkamenar/implib-sdk/releases'>Скачать</a> | <a href='https://github.com/vkamenar/implib-sdk/discussions'>Обсуждения</a> ]</span></center>
+<center><span class='mnu'>[ <a href='EN.HTM'>English</a> | <a href='ES.HTM'>Espa&#241;ol</a> | Pycc&#954;u&#250; ]</span>
+<h1 itemprop="headline">Руководство по ImpLib SDK</h1><span class='mnu'>[ <a href='https://github.com/vkamenar/implib-sdk/releases'>Скачать</a> | <a href='https://github.com/vkamenar/implib-sdk/discussions'>Обсуждения</a> ]</span></center>
 <p align="right">Дата публикации: <b itemprop="datePublished">2007-02-01</b><br>Последнее обновление: <b itemprop="dateModified">2025-04-20</b><br>Автор: <span itemprop="author" itemscope itemtype="https://schema.org/Person"><a itemprop="url" href="https://www.celersms.com/org/vkamenar-ru.htm"><b itemprop="name"><link itemprop="sameAs" href="https://www.facebook.com/vladimir.kamenar.1"><link itemprop="sameAs" href="https://x.com/KamenarVladimir"><link itemprop="sameAs" href="https://www.linkedin.com/in/vladimir-kamenar/"><link itemprop="sameAs" href="https://www.wikidata.org/wiki/Q106606516">Владимир Каменяр</b></a></span>
-<div style="background:#e1f5fa;padding:10px;border:1px solid #abbbbf;display:inline-block">
+<div class="nav">
 <a href="#0">Установка и применение</a>
 <br><a href="#1">Как это использовать?</a>
 <br><a href="#2">DLL2DEF</a>
@@ -69,7 +78,7 @@ Windows.
 импорта. При компиляции библиотеки импорта для совместимости с этим линкером необходимо включить параметр конфигурации <code>RENAME_AR_MEMBERS</code>. Эту же
 библиотеку можно использовать с линкером GNU. В следующей таблице приведены сведения о совместимости.
 </ul>
-<table cellpadding=4 style="border:1px solid #ddd;margin-left:auto;margin-right:auto;text-align:center">
+<table cellpadding=4 class="tbl">
 <tr><th>RENAME_AR_MEMBERS<th>Pelle's<br>(polink)<th>MS<th>GNU<br>(LD)<th>LLVM<br>(lld-link)
 <tr><td>0<td>&#10003;<td>&#10003;<td>&#10003;<td>&#10007;
 <tr><td>1<td>&#10007;<td>&#10007;<td>&#10003;<td>&#10003;
@@ -102,10 +111,10 @@ endlib
 либо на <code>implib64.inc</code> (для 64-битных DLL). Нужно указывать полный или относительный путь, если только INC-файл не расположен в одном каталоге с
 DEF-файлом. В конце списка не забудьте указать замыкающий макрос <code>endlib</code>. Каждое определение символа начинается с макроса <code>implib</code>, в
 котором указывается имя DLL и имя экспортируемого символа. Вместо символьного имени можно указать ординал — для этого предусмотрена приставка 'ord.':<pre>
-   implib kernel32.dll, <span style="background-color:#FF0">ord.5</span>
+   implib kernel32.dll, <span class="high">ord.5</span>
 </pre>
 <p>Если Вы хотите, чтобы данная функция была доступна линкеру под каким-либо другим именем, укажите это имя в дополнительном параметре:<pre>
-   implib kernel32.dll, CreateFileA, <span style="background-color:#FF0">CreateFile</span>
+   implib kernel32.dll, CreateFileA, <span class="high">CreateFile</span>
 </pre>
 <p>При обращении к функции <code>CreateFile</code>, линкер на самом деле создаст ссылку на <code>KERNEL32!CreateFileA</code>.
 Таким образом, можно опустить суффикс 'A' в обьектном файле. Данная возможность полезна в основном для совместимости с декорацией имён (<i>name mangling</i>).
@@ -124,7 +133,7 @@ endlib
 </pre>
 <p>Как видите, имена 32-битных функций STDCALL начинаются с символа подчёркивания (<code>_</code>) и заканчиваются суффиксом из символа собаки и десятичного числа (<code>@#</code>). Десятичное число — это количество байтов в списке аргументов. Обычно оно равно количеству аргументов умноженному на 4, поскольку большинство аргументов в стеке либо 32-битные, либо выровнены по 32-битной границе (32 бита = 4 байта).
 <p>Это соглашение не распространяется на 64-битные библиотеки. Для линковки к 64-битной KERNEL32.DLL список будет выглядеть следующим образом:<pre>
-include 'src\<span style="background-color:#FF0">implib64.inc</span>'
+include 'src\<span class="high">implib64.inc</span>'
 
    ; KERNEL32.DLL
    implib kernel32.dll, CreateFileA
@@ -195,7 +204,7 @@ endlib
 </pre>
 <p>Так как <code>div</code> является мнемоникой инструкции беззнакового целочисленного деления, нужно переименовать эту функцию. Стив Хатчессон (<i>Hutch</i>), создатель MASM32 SDK, предложил добавлять приставку '<code>_crt_</code>' (на официальном форуме masm32 есть ветка, посвящённая данной теме). Итак, давайте добавим приставку:
 <pre>
-   implib msvcrt.dll, div, <span style="background-color:#FF0">_crt_</span>div
+   implib msvcrt.dll, div, <span class="high">_crt_</span>div
 </pre>
 <p>Аналогичным образом исправляем описание функции <code>fabs</code>. Рекомендуется добавить приставку '<code>_</code>' к именам переходников всех функций, которые не содержат этой приставки. Таким образом эти функции можно будет вызывать через <code>invoke</code>. Например:<pre>
    ; MSVCRT.printf ord.742
@@ -203,11 +212,11 @@ endlib
 </pre>
 <p>Рекомендуется переписать следующим образом:<pre>
    ; MSVCRT.printf ord.742
-   implib msvcrt.dll, printf, <span style="background-color:#FF0">_printf</span>
+   implib msvcrt.dll, printf, <span class="high">_printf</span>
 </pre>
 <p>А вот как это будет выглядеть с использованием ординала:<pre>
    ; MSVCRT.printf ord.742
-   implib msvcrt.dll, <span style="background-color:#FF0">ord.742</span>, _printf, __imp__printf
+   implib msvcrt.dll, <span class="high">ord.742</span>, _printf, __imp__printf
 </pre>
 <p>Так как настоящее имя функции пропадает при использовании ординала, рекомендуется явно указывать имя переходника (<code>_printf</code>) и публичное имя импорта (<code>__imp__printf</code>). ImpLib не выдаст ошибку, если Вы не укажете явно эти имена, но тогда вызывать эти функции окажется затруднительно.<p>Скомпилируйте библиотеку. Так как ImpLib интерпретируется препроцессором FASM'а, а def-файл содержит большое количество функций, компиляция может затянуться на несколько минут:<pre>
    <b>\bin\fasm msvcrt.def msvcrt.lib</b>
@@ -288,7 +297,7 @@ endlib
    pbimplib OpenAL32.dll, STDCALL, 0, alBuffer3f
 </pre>
 <p><code>alBuffer3f()</code> не использует соглашение STDCALL, да и принимает несколько аргументов, а не 0. DLL2DEF просто не может угадать количество аргументов и соглашение о вызове. Использование "STDCALL, 0" отключает автоматическое восстановление стека после вызова данной функции через переходник. Правильный прототип:<pre>
-   pbimplib OpenAL32.dll, <span style="background-color:#FF0">CDECL, 5</span>, alBuffer3f
+   pbimplib OpenAL32.dll, <span class="high">CDECL, 5</span>, alBuffer3f
 </pre>
 <p>Можете исправить остальные прототипы или просто воспользоваться готовым скриптом <code>src\PureBasic\openal32.def</code>. Давайте скомпилируем его:<pre>
    <b>bin\fasm openal32.def Pbopenal.lib</b>
@@ -322,7 +331,7 @@ Userlib можно найти в <a href="/pbopenal/ind_ru.htm">PureBasic OpenAL
 <a href="https://github.com/vkamenar/implib-sdk/discussions">GitHub</a> или <a href="https://sourceforge.net/p/implib/discussion/">SourceForge</a>.<br>&nbsp;
 </div>
 </div>
-<div style="text-align:right"><a href="#top">Наверх</a></div>
+<div class="btop"><a href="#top">Наверх</a></div>
 <center><small>&#169; 2006 — 2025 <a href="https://www.celersms.com/org/vkamenar-ru.htm">Владимир Каменяр</a>
 <br>Все права защищены</small></center>
 </body></html>
