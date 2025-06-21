@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>javamon</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="declaration: package: com.agent, class: javamon">
+<style type=text/css>
+body{background-color:#fff;color:#353833;font-family:Arial,Helvetica,sans-serif;font-size:14px;margin:0;padding:0;height:100%;width:100%}
+a:link,a:visited{text-decoration:none;color:#4A6782}
+a[href]:hover,a[href]:focus{text-decoration:none;color:#bb7a2a}
+a[name]{color:#353833}
+a[name]:before,a[name]:target,a[id]:before,a[id]:target{content:"";display:inline-block;position:relative;padding-top:129px;margin-top:-129px}
+pre{font-family:monospace;font-size:14px}
+h1{font-size:20px}
+h2{font-size:18px}
+h3{font-size:16px}
+ul{list-style-type:disc}
+code,tt{font-family:monospace;font-size:14px;padding-top:4px;margin-top:8px;line-height:1.4em}
+dt code{font-family:monospace;font-size:14px;padding-top:4px}
+table tr td dt code{font-family:monospace;font-size:14px;vertical-align:top;padding-top:4px}
+sup{font-size:8px}
+.clear{clear:both;height:0px;overflow:hidden}
+.bar a,.bar a:link,.bar a:visited,.bar a:active{color:#FFF;text-decoration:none}
+.bar a:hover,.bar a:focus{color:#bb7a2a}
+.tab{background-color:#0066FF;color:#fff;padding:8px;width:5em;font-weight:bold}
+.bar{background-color:#4D7A97;color:#FFF;padding:.8em .5em .4em .8em;height:auto;font-size:11px;margin:0}
+.header,.footer{clear:both;margin:0 20px;padding:5px 0 0 0}
+.title{color:#2c4557;margin:10px 0}
+.subTitle{margin:5px 0 0 0}
+.header ul{margin:0 0 15px 0;padding:0}
+.footer ul{margin:20px 0 5px 0}
+.header ul li,.footer ul li{list-style:none;font-size:13px}
+body.class-declaration .summary h2,body.class-declaration .details h2,body.class-use h2{font-style:italic;padding:0;margin:15px 0}
+body.class-declaration .summary h3,body.class-declaration .details h3,body.class-declaration .summary .inheritedList h2{background-color:#dee3e9;border:1px solid #d0d9e0;margin:0 0 6px -8px;padding:7px 5px}
+.contentContainer,.constantValuesContainer,.allPackagesContainer{clear:both;padding:10px 20px;position:relative}
+.contentContainer .description dl dt,.contentContainer .details dl dt{font-size:12px;font-weight:bold;margin:10px 0 0 0;color:#4E4E4E}
+.contentContainer .description dl dd,.contentContainer .details dl dd{margin:5px 0 10px 0px;font-size:14px;font-family:Georgia,"Times New Roman",Times,serif}
+div.inheritance{margin:0;padding:0}
+div.inheritance div.inheritance{margin-left:2em}
+ul.blockList{margin:10px 0 10px 0;padding:0}
+ul.blockList li.blockList{list-style:none;margin-bottom:15px;line-height:1.4}
+table tr td dl,table tr td dl dt,table tr td dl dd{margin-top:0;margin-bottom:1px}
+.memberSummary table,.typeSummary table,.usesSummary table{width:100%;border-spacing:0;border-left:1px solid #EEE;border-right:1px solid #EEE;border-bottom:1px solid #EEE}
+.memberSummary table,.usesSummary table{padding:0px}
+.memberSummary caption,.typeSummary caption,.usesSummary caption{position:relative;text-align:left;background-repeat:no-repeat;color:#253441;font-weight:bold;clear:none;overflow:hidden;padding:0px;padding-top:10px;padding-left:1px;margin:0px;white-space:pre}
+.memberSummary caption a:link,.typeSummary caption a:link,.usesSummary caption a:link,.memberSummary caption a:hover,.typeSummary caption a:hover,.usesSummary caption a:hover,.memberSummary caption a:active,.typeSummary caption a:active,.usesSummary caption a:active,.memberSummary caption a:visited,.typeSummary caption a:visited,.usesSummary caption a:visited{color:#FFF}
+.memberSummary caption span,.typeSummary caption span,.usesSummary caption span{white-space:nowrap;padding-top:5px;padding-left:12px;padding-right:12px;padding-bottom:7px;display:inline-block;float:left;background-color:#F8981D;border:none;height:16px}
+.memberSummary .tabEnd,.typeSummary .tabEnd,.usesSummary .tabEnd{display:none;width:5px;position:relative;float:left;background-color:#F8981D}
+.rowColor th,.altColor th{font-weight:normal}
+.memberSummary td,.typeSummary td,.usesSummary td{text-align:left;padding:0px 0px 12px 10px}
+th.colFirst,th.colSecond,th.colLast,td.colFirst,td.colSecond,td.colLast{vertical-align:top;padding-right:0px;padding-top:8px;padding-bottom:3px}
+th.colFirst,th.colSecond,th.colLast,.constantsSummary th,td.colFirst,th.colFirst{font-size:13px}
+td.colSecond,th.colSecond,td.colLast,th.colLast{font-size:13px}
+.usesSummary td.colFirst,.usesSummary th.colFirst,.memberSummary td.colFirst,.memberSummary th.colFirst,.memberSummary td.colSecond,.memberSummary th.colSecond,.typeSummary td.colFirst,.typeSummary th.colFirst{vertical-align:top}
+td.colFirst a:link,td.colFirst a:visited,td.colSecond a:link,td.colSecond a:visited,th.colFirst a:link,th.colFirst a:visited,th.colSecond a:link,th.colSecond a:visited,.constantValuesContainer td a:link,.constantValuesContainer td a:visited,.allPackagesContainer td a:link,.allPackagesContainer td a:visited{font-weight:bold}
+.altColor,.altColor th{background-color:#FFF}
+.rowColor,.rowColor th{background-color:#EEEEEF}
+.description pre{margin-top:0}
+div.block{font-size:14px;font-family:Georgia,"Times New Roman",Times,serif}
+td.colLast div{padding-top:0px}
+td.colLast a{padding-bottom:3px}
+div.memberSignature{font-family:monospace;font-size:14px;margin:14px 0;white-space:pre-wrap}
+.block{display:block;margin:3px 10px 2px 0px;color:#474747}
+.memberNameLink,.packageLabelInType,.paramLabel,.typeNameLabel{font-weight:bold}
+main,nav,header,footer,section{display:block}
+.inheritedList{margin:10px 0 10px 0}
+section.description{line-height:1.4}
+.summary section[class$="Summary"],.details section[class$="Details"]{padding:0px 20px 5px 10px;border:1px solid #ededed;background-color:#f8f8f8}
+.inheritedList,section[class$="Details"] .detail{padding:0 0 5px 8px;background-color:#fff;border:none}
+</style>
+</head>
+<body class="class-declaration">
+<main role="main">
+<div class="header">
+<div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;com.agent</div>
+<h1 title="Class javamon" class="title">Class javamon</h1>
+</div>
+<div class="contentContainer">
+<div class="inheritance" title="Inheritance Tree">java.lang.Object
+<div class="inheritance" title="Inheritance Tree">java.lang.Thread
+<div class="inheritance">com.agent.javamon</div>
+</div>
+</div>
+<section class="description">
+<hr>
+<pre>public class <span class="typeNameLabel">javamon</span>
+extends java.lang.Thread</pre>
+<div class="block"><b>Javamon</b> is a lightweight JVM monitoring agent. It is compatible with Java 1.4 and later.
+Javamon exposes an HTTP endpoint compatible with <a href="https://github.com/prometheus">Prometheus</a>,
+an open source monitoring system.
+<p>&nbsp;
+<div style="text-align:center"><svg width="749" height="312" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" overflow="hidden"><defs><clipPath id="a"><path d="M0 0h279861v317176H0z"/></clipPath><image width="150" height="170" xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCACqAJYDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9U6KKKACiiigAooooAKKKKACs/T/EOl6tf6hY2OpWd5e6c6xXttbzpJJbOy7lWRQcoSpBAbGQc1xH7Q3xk0/4CfB/xF40v8O1jBttLfqZ7p/lhjx6FyMnsoY9q/Hj9lX9qrVvgt+0IfGmuXs97pmv3Dp4jHJMySuWabaOro53jAzjcoxuoGlc/c6ioLG+t9Usbe8tJo7m0uI1mhmiYMkiMAVYEdQQQc1PQIKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiivNP2jvjJZ/AX4N+JPGV0UaeytyllbuwHn3T/LEg9fmIJx/CGPagD84v+CqP7QX/CcfEmy+G2lXCvo/hg+dfNGxIlv3XBU9v3SHb7M8g7V8KVd1rWr7xHrF9q2p3Ul7qV9O9zc3Mxy8sjsWZ2PqSSapUGp+sP8AwSy/aQfxx4Fuvhfrdz5mseHIvP0x3JLTWBYApknkxOwH+66AfdNfeVfzw/Bf4qap8FPih4e8Z6Qc3WlXKytDnAniPyyRN7MhZfxz2r+gLwP4y0v4heD9G8TaLP8AadK1a1jvLaTGCUdQQCOxGcEdiCKCJG5RRRQSFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFfk7/wAFWvj2PGPxH034aaZOX0zwz/pOobR8sl9IgwM9/LjYD6yOD0r9KPjl8VLL4J/CbxN41v1WSPSbRpYoWbb50xIWKPP+07Kv41/Px4k8Rah4u8Q6nrmq3DXep6lcyXdzO55kkdizH8yaCombRRRQWFfqD/wSa+Px1bw/rHwn1W4Hn6Zu1LRvMfloHb9/CoP912DgDr5j9lr8vq7j4J/FTUfgr8VPDfjTTCTcaVdLK8X/AD2hOVljP+8jMvtnNAnqf0N0VmeGfEVh4w8OaXrulT/adM1O1ivLWYDG+KRQ6HHbIIrToMwooooAKKKKACiiigAooooAKKKKACiiqGva5ZeGND1HWNSnFtp2n28l1czMMiONFLM34AGgD82f+Ct/xvNxqHhz4V6dOpitwNZ1UL18whkt4ye2FLuR/tIa/OGu0+M3xLvvjF8VPE/jLUXdp9XvpLhEfrFDnEUQ9kjCKPZa4ug1QUVvab4J1TUlVxCLeJuQ8x2/p1/Stb/hWN1j/j9hz/umsnVgnZs+vwnCOe46mqtDCScXs3aN/TmaucXRXRaj4D1WwVnWNbqNRkmE5P5HmueZSrEEYI4INXGUZfCzxMfleNyup7PG0ZU35q1/R7P5H61f8Epfjh/wmXwn1L4fahOX1TwvL5tp5j5L2UrEgDPPySbx6AOgr7or8Fv2OfjUfgN+0D4Z8STyiLSJpf7O1TcTj7LMQrscf3Dtk+qCv3nR1kVWVgysMhlOQR61R5DHUUUUEhRRRQAUUUUAFFFFABRRRQAV8af8FSPjJ/wr74Bx+FLOd4tV8X3H2X92cEWkRV5zn0OY0x3DtX2XX4l/8FFPjA3xa/aX1u1tZXk0jwyP7EtUycGSMnz3A9TKXXPcItA1ufMFfXH7Cf7J9n8ePGs0mvzyW2ladAt3cLCR5jBmwiLkfKW5JbBwB6mvlPTLI3OrWltKrIJJUUgjBwSP6V9S/B/40eKPgb4ifWPC91HDLNH5Nxb3EfmQzoDkKy+x6EEEevJrlrVFFqL2P1zgnhytm2HxeNw7Sq00lT5tlJ6t9dUvhdtG79D9NtQ/Y9+Dg8JzaVJ4QsrS1SMsb8SutzHgffMxbdxjPJ2+or8mtYtrez1a9gs7j7XaRTvHDcYx5qBiFbHuMH8a9p+LX7ZvxJ+LukTaRe3troukTjbPZ6PE0SzD0Z2ZnIPdd2D3BrwuuKtOMmuRH7jwZkeb5RSqzzfEOpKbVo8zly2vd3fV31tpp16Fcv4w8Jx6tbvdW6BL1Bk4/wCWgHY+/pXT0tZRk4O6Psc1yrC5zhJ4PFxvGX3p9GuzX9aHhFfuF/wT++NX/C5v2b9Be7uRca5oI/sbUMjDZiA8pz67ojGSe5DV+MsXg7UfFnxFh8NaFbfbNV1O+S1s7besfmSyMAibmIUcsBkkCvsn/gmn421X4I/tKeJPhV4pRtKm1lHs5bKUhvL1G2LMo3AleU84ZBwx2YJ4r207q5/B+Mw0sJiKmGnvCTi/k7H6xUUUUzgCiiigAooooAKKKKACiiuD+L3xy8E/Avw4+s+M9dt9Jg2kw27NuuLlh/DFEPmc8joMDPJAoAoftJfFaL4J/A/xd4wdsXFhZMtmv965f93CPpvZc+wNfD3/AASZ+DY1ibxf8UtctlvZGk/srT57r94xkOJbmTnvzEA3u9fMv7WH7ZPiz9qbxJ9ghE+k+DIZh/Z+gQtkyN0WSYj/AFkhzwOi5wOck/rt+zJ8JU+CPwJ8H+EDCsN9Z2SyX4Vg2buT95Odw6jezAH0AoK2R+YH/BTrwPd+BP2p28RLGBZa/Y2t/bsoIUPEogdPqPKU8dnWvLLW5jvLeKeJt0cihlP1r9YP21f2YYP2m/hS+n2Ygg8W6SzXejXcoAG/GHgZuoSQAA+jKhP3a/Gm3utX+GPiC+8NeJdPudPurKZobi0uEKy2zjqMHt3985HWuWvTc1dbo/XfDziihkeKqYbGu1KrbX+WS2b8nezfTTpc7yiq9lqFtqUIltpkmQ91PT6jt+NWK8vbc/rOlVp1oKpSkpRezTun8wpskixRs7sFVRksewqO6u4LKEy3EqQxj+JziuG1zxFdeLb630TQrae7kupVhjjhjLS3LsQFRFHJyccdTmtKdOVR2R8rxFxNgeHcNKpXknUt7sL6t9NOi7v9bI9f/YT8EzfFT9sDwtMgf7JpV0+uTyKPuRwfNHn2MhiX/gVeyf8ABSDw7ffAz9qrwd8V9BzHPqYh1BSy/J9ss2RWX3BTycjvlq+sP2Bf2TH/AGb/AIez6l4gjjPjjX1SS+CkMLOEcx24PqCSXI4LcchQTS/4KdfDN/H37Md/qlsive+GLyLVRx8xh5ilAPYBZN5/6517KVlY/iCvXniK0q1R3lJtv1buz0z9nH9rTwJ+0voSz6BfCx12Jc3egXzqt3AeeQM/vE4zvXI5Gdp4r2mv5z/h1461r4ZeONE8U+HrhrbWdLuUuLd1zhiDyjAdVYEqR3DEd6/bv9nH9rTw38fFudGntZvCXj/TsrqfhTVAUuYWU4Zk3BTIo78Arn5gMglmDVj3WiiigkKKKKACq2palaaPp9xfX9zDZWVtG0s1xcOEjjRRkszHgADuas1+Zf8AwUG8c6/43/ae8MfB7XvFT+DfhteJZSyzIpMcplZg00uOWww2KGOxSu445NA1qep/ED9uHxd8YvF9x4A/Zs8Pt4h1BG8u88XXcX+hWg3Y3oGG3bwcO/Bx8qtxWt4V/wCCceha1pGs6t8W/EmofELx/q9pJE+q3Nw4g0+R0YboFJ+bYWyC/wAowMItfSvwg+DvhT4HeC7Twz4Q0yPT9OhAaST70tzJgAyyv/E7YGT07AAACsn9pb4hSfCv4B+O/FMEixXdhpUxtXboLhx5cP8A5EdKA9D8hv2Jfgx/wsP9rPQNDuRHf6doF5JqV9LAd8TpatlTnujS+UPcNX7i1+c3/BIH4ciHQ/Hfj2dQ0t1cRaPbMR8wVAJZfwJeL/viv0ZoG9wrw39o/wDY8+H/AO0tY79esm03xDEmy317TwEuUHGFfIxKvHRunOCOte5UUEn5CfEb/glb8XPBl5cz+D77TfF9irHyTb3H2K7ZcZ+aOQhAe2BIa8vb9jr9o2Gc2R8Ca+W37NwmjZc/9dA+Me+cV+5dFJxT3R20cbicOnGjUlFPs2vyPx18A/8ABLz41eOLqCXxM2n+ErMtiSTUb0XU6rnkrHEWBPsWX61+gP7NP7Dfw+/ZrZdSsopPEXiwoVbXdSRd8eeogjHEQI4yMsQSC2Divomimc06kqknKbu2FYHj7whZ/EDwP4g8M6gpax1iwnsJgODtkjKEj3GeK36KDM/DT9jL4Ft8TP2qdF8L6uEhttCupL/UoZHCs62rjMQB+8Wk2KQOdpY9q/Vf9pT9lnSPjlYRazpVwfCvxI0v97o/imxzFPHIvKpKy4LxnGOclckr3B+Dte/4x7/4KoQ3ksbWumatriTBvuI8WoR7Hf0KrLM+fdDX6y0FM+Q/2av2x9SvfGkvwg+NFonhn4o2En2aG6ZRHbarwNhU5wJHB3DHyuOVxkLX15Xxb/wU++Cmh+K/gvJ8QVktdL8V+GZIjBfNIInuYGfBt938TAtvQdQVYD7xrov+Ccv7RHiD49fB28g8TpJc6v4buEsH1Z+ftyMu5Gbj/WKPlb1+VjyxoF5n1hRRRQIK+Lf+Cmn7NEvxb+GcHjfQLPz/ABN4Vjd5o4kzJdWJ+aRfUmM5kA54MmOTX2lSMoZSrAFSMEHoaAPhv9iT9uvwtq3wNNj8TPFNjoeueF/KsmutQmCtfW5BELov3pHAUq+AT8oY/e4i/wCCpHxY0+b9mbQLLQNZtdQsvFOrRlZrG4WWK6toVaRirKSGUSCH8cV+bP7Q3hDUPAvxw8caRqOlnSJItYunithB5KeS0rNG0a4A8soQVxxgjFc1pt5rfiz+wPCgvbm7s1vSmn2DykxxS3DIrlAThSxVM/Sg0t1P2u/YB8Cx+A/2T/A0Pk+Vc6nbvq1wcAF2ncuhP/bPyx9AK+h6zvDmh23hnw/pej2Uaw2en2sVpBGoACxxoEUADoAAK0aDMKKKKACiiigAooooAKKKKAPy/wD+CuHhO58P/Ef4dePbP9281rJYmRV+5LbyiWMk+pExx/uHr2+2/EH7Wfw58B/C7wh428X6/DoNn4lsIL2ytdjzzyeZErkLHGrMQu4AtjAJGSM14t/wVb8GnxD+zTb6xGoMug6zb3Ltgk+VIrwsOnHzSRnnjj6V+SGueLdb8TWul2+ratealBpdsLOxjup2kW1gBJEcYJ+VQSeBxQXuj7P+LvjTxZ/wUk/aKtPCHgaa8tvh5pbKY5riJlhgjHEt7MmRlzllRSQ2MDglq/Tb4M/B7w58Cfh7pnhDwxaiCws1zJMwHm3UxA3zSkD5nYjr2AAGAAK+Cf8Agjr4bvPtHxL18grYFLOxTP8AHJmV2x/ugrn/AHxX6XUCfYKKKKCQrF8T+NPD3gmz+1+Ite0zQbT/AJ76peR20f8A307AVtV+cH/BTT9k/wAefEDxlB8S/CtnJ4i0220yOyvNNtcvd2/lu53pH1dD5nIXJBBOMcgGj5W/4KBfECx+I/7U3inUtK1S11nR4YrS1sruxuUuIHjW3QtsdCVI3s54PBJFZH7DfhX/AITD9rD4bWRj8xINTGoNxwPs6NOCfxjH5ivFLrTLywvTZ3NpPb3YIU28sbLICeg2kZ5r7V/4JJ+HV1L9ofXNUki3rpugTFHP8Ekk0SA9epXzB+JoL6H660UUUGYUUUUAFFFFABRRRQAUUUUAfP37fWlvrH7IfxHhjj8xo7OG4xnGBHcRSE/gFJ/Cvwtr9+P2uLA6l+zD8UYQdpHh68kz/uRM/wD7LX4D0FxPqj/gm18Tr7wD+09oemretBo3iCKexvoXl2RNiJpI3IJxuV0GD1wzAfeNftUrBlBUgg9CK/m203TLzWtQtrDT7Se+vrmRYoLW2jaSWVycBVVQSxJ6AV+1f7APwG8c/An4Sz2njjW7i4udSeOe10CSYyxaRGA2UU5IDOWBZV+UFRjncSBI+n6KKKCAooooA5nx9oceoeG9Vu7XTrK6123sp20+a6hVzHN5ZKEMRkfMF6V+dH/BHP7D/wAJL8UDJs/tL7JYeRn73lb5/Mx7bvKz+Ffp3JGssbI43KwII9Qa/H/4C+Nn/YD/AGxPEfh7xlA0Hhy7Z9NubxVZhHbO4ktrtQASy4C5A5AZuCy4oKWx+wVFfOHjf/goV8C/Bmgy6hH40h8QXAUmLT9GheaeY/3RkBV+rsor4t+I/wC3X8af2rNdk8G/B7w9f6DYT7kKaV+9v5oyMZluMBYF7/Ltx0LkUCsfbP7Rn7c3w2/Z1+0ade3reIvFaAgaDpTK8kbYyPPfO2IdOuWwchTXxTN+3T+07+0Nql5H8LPDMmmadERGyaHpQvWh3DjzbiZWUMecEBPpxmvWP2bv+CWOmaHNb+IvjBex+ItTb97/AMI/ayN9lRiAf38vDSsCTlVwuR1cGvvjRNC03w1pdvpukWFtpmn26hIbWzhWKKNR2VVAAoHoflav7On7bfxAm87VfEmv6Wkq4ZbrxUIIxt6AxQynn320+T9iv9r/AE+Nrm28cX0s8Y3Ilv4wuFkJ9FLMoB+pFfq7RQFz8mm/aC/bG/Zlg3eL9K1LV9CsSFkn13TlvbbHAy15D8xz6mTrXuPwb/4Kz+C/FE8dh8QNAuvB9y7Ki6hZObyz56s4wJIxnHRX68kYr7zZQ6lWAZSMEEZBr59+OX7C/wAJ/jna3c154fh8P+IZuV1zRUEE4bPV0HyS56HepOOhB5oDQ9u8L+K9G8baHa614f1Sz1rSbpd0N7YzLLFIM4OGU44OQR2IxWrX4+Xlj8Y/+CY/xRgnjuDr3gbUJv4SwsNUQDlWU5ME4B69QRwXXIP6YfA39pXwH+0B4Uh1nwzrMImCj7Xpd1IqXdm5/hkTPscMMqccGgVjC/bb8SL4W/ZR+Jd4zFfN0l7IYx1nZYB1/wCulfBv7FH7Dfg/9pb9n/Xdb8QTXuk63/bUlrp+qWMhJSNIoiVaJvkdSzt6NwfmFei/8FXvjtZ3uj+HvhVoN+Ly+uLldR1WK0cPtVQVghbHUszF9vbYh7ivrz9kb4Sy/BP9nnwb4Wu4Wg1WO0+1ajHJgsl1MxlkQkcHYX2cdkFA9kcn+zD+w34E/Zlml1WzebxH4qmQxnWtQRVMUZIykMYyIwcDJyWPIzg4r6NoooJCiiigAooooAK8g/aA/ZV+H37SllaR+MNNm+32Y222qafKIbuJCSSgYggrkk7WBGeRg16/RQB8Y6D/AMEnvgro+pRXN1feK9aiRgxs7/UYVifHYmKCNsfRhX1T4B+G/hf4WaAmieEtBsfD+lqd32exiCBmwBuY9WbAHzMSTjrXS0UDCiiigQUUUUAFFFFAHO+Pvh94d+KPhW98N+KdKt9Z0a8XbLa3C5GezKeqsDyGBBB6Gvz4+I3/AAR/NxrlzceBvHcdppcjAw2GuWzPJCMcjzoz84znHyA4wCT1P6U0UDufCP7NP/BLzSvhT40sfFnjjxBD4rvtOkWex020tjHaxzKciSQuSZMHBAwoBGTnpX3dRRQAUUUUCCiiigD/2Q==" preserveAspectRatio="none" id="b"/></defs><path stroke="#042433" stroke-width="1.146" stroke-miterlimit="8" fill="none" d="M.5.5h238v311H.5z"/><text font-family="Aptos,Aptos_MSFontService,sans-serif" font-weight="400" font-size="28" transform="translate(44.381 287)">JVM process</text><g clip-path="url(#a)" transform="translate(72 138) scale(.00036)"><use width="100%" height="100%" xlink:href="#b" transform="scale(1865.74)"/></g><path fill="#156082" d="M15.5 26.934h197.566V110.5H15.5z"/><path d="M213.066 26.934 222.5 17.5v83.566l-9.434 9.434z" fill="#114D69" fill-rule="evenodd"/><path d="m15.5 26.934 9.434-9.434H222.5l-9.434 9.434z" fill="#437F9B" fill-rule="evenodd"/><path d="m15.5 26.934 9.434-9.434H222.5v83.566l-9.434 9.434H15.5zm0 0h197.566L222.5 17.5m-9.434 9.434V110.5" stroke="#042433" stroke-width="1.146" stroke-miterlimit="8" fill="none"/><text fill="#FFF" font-family="Aptos,Aptos_MSFontService,sans-serif" font-weight="400" font-size="32" transform="translate(53.756 79)">javamon</text><path d="M562.05 80.927H271.421v1.146H562.05zM276.004 67.75l-27.5 13.75 27.5 13.75z" fill="#C04F15"/><path d="M363.73 35.009h23v34h-23zM394.73 35.009h49v34h-49z" fill="#FF0" fill-rule="evenodd"/><text fill="#104862" font-family="Aptos,Aptos_MSFontService,sans-serif" font-weight="400" font-size="28" transform="translate(286.732 61)">http://</text><text fill="#104862" font-family="Aptos,Aptos_MSFontService,sans-serif" font-weight="400" font-size="28" transform="translate(363.73 61)">IP</text><text fill="#104862" font-family="Aptos,Aptos_MSFontService,sans-serif" font-weight="400" font-size="28" transform="translate(386.73 61)">:</text><text fill="#104862" font-family="Aptos,Aptos_MSFontService,sans-serif" font-weight="400" font-size="28" transform="translate(394.73 61)">port</text><text fill="#104862" font-family="Aptos,Aptos_MSFontService,sans-serif" font-weight="400" font-size="28" transform="translate(443.73 61)">/metrics</text><text fill="#C04F15" font-family="Aptos,Aptos_MSFontService,sans-serif" font-weight="400" font-size="28" transform="translate(569.27 199)">Prometheus</text><path d="M641.087 1.18C596.858 1.18 561 37.125 561 81.47c0 44.343 35.858 80.293 80.087 80.293 44.23 0 80.086-35.95 80.086-80.293 0-44.344-35.858-80.29-80.086-80.29zm0 150.273c-12.584 0-22.786-8.428-22.786-18.821h45.573c0 10.391-10.203 18.821-22.787 18.821zm37.637-25.054h-75.277v-13.686h75.278V126.4zm-.27-20.729h-74.792c-.249-.287-.503-.571-.744-.863-7.705-9.38-9.52-14.277-11.282-19.267-.03-.165 9.343 1.92 15.99 3.419 0 0 3.42.793 8.42 1.707-4.8-5.642-7.651-12.815-7.651-20.146 0-16.095 12.313-30.16 7.87-41.528 4.324.353 8.948 9.148 9.26 22.9 4.597-6.368 6.52-17.997 6.52-25.127 0-7.382 4.852-15.958 9.705-16.251-4.326 7.148 1.121 13.277 5.963 28.48 1.816 5.71 1.584 15.32 2.986 21.413.465-12.657 2.636-31.126 10.645-37.502-3.533 8.03.523 18.077 3.297 22.908 4.476 7.793 7.19 13.697 7.19 24.864 0 7.488-2.757 14.537-7.409 20.047 5.289-.994 8.941-1.891 8.941-1.891l17.174-3.36c.002-.001-2.494 10.289-12.083 20.197z" fill="#E6522C"/></svg></div>
+<p>&nbsp;
+<p>The following metrics are exposed:
+<table style="border-style:none;margin-left:50px">
+<tr><th>Metric name<th>Metric type<th>Units<th>Description
+<tr class="rowColor"><td>heap_size_bytes<td>gauge<td>bytes<td>Current JVM heap size
+<tr class="rowColor"><td>heap_free_bytes<td>gauge<td>bytes<td>Bytes currently available in the Java heap
+<tr class="rowColor"><td>uptime_sec<td>counter<td>seconds<td>Seconds since last javamon restart (normally this value matches the JVM uptime)
+</table>
+</div>
+</section>
+<section class="summary">
+<ul class="blockList"><li class="blockList">
+<a id="constructor.summary"></a>
+<h2>Constructor Summary</h2>
+<div class="memberSummary">
+<div id="memberSummary_tabpanel" role="tabpanel">
+<table>
+<thead>
+<tr>
+<th class="colFirst" scope="col">Constructor<th class="colLast" scope="col">Description
+</thead>
+<tbody>
+<tr class="altColor">
+<td class="colFirst" scope="row"><code><span class="memberNameLink"><a href="#javamon-">javamon</a></span>(String host, int port)</code>
+<td class="colLast">
+<div class="block">Allocates a new <code>javamon</code> object configured for the given host or IP address and port number. The HTTP listener will start after calling <code>start()</code> on this object.</div>
+</table>
+</li>
+</ul>
+<ul class="blockList"><li class="blockList">
+<a id="method.summary"></a>
+<h2>Method Summary</h2>
+<div class="memberSummary">
+<div id="memberSummary_tabpanel" role="tabpanel">
+<table>
+<thead>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</thead>
+<tbody>
+<tr class="altColor" id="i0">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#shut()">shut</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Signal the HTTP listener to shutdown gracefully.</div>
+<tr class="rowColor" id="i1">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#start()">start</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Launch the HTTP endpoint in a separate thread.</div>
+<tr class="altColor" id="i2">
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#main()">main</a></span>(String[] args)</code></th>
+<td class="colLast">
+<div class="block">Launch javamon as a wrapper from the command line.</div>
+</tbody>
+</table>
+</div>
+</div>
+<div class="inheritedList">
+<h3>Methods inherited from class&nbsp;java.lang.Thread</h3>
+<code>activeCount checkAccess countStackFrames currentThread destroy dumpStack enumerate getContextClassLoader getName getPriority getThreadGroup holdsLock interrupt interrupted isAlive isDaemon isInterrupted join resume run setContextClassLoader setDaemon setName setPriority sleep stop suspend toString yield</code></div>
+<div class="inheritedList">
+<h3>Methods inherited from class&nbsp;java.lang.Object</h3>
+<code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, wait</code></div>
+</li>
+</ul>
+</section>
+<section class="details">
+<ul class="blockList"><li class="blockList">
+<a id="constructor.detail"></a>
+<h2>Constructor Details</h2>
+<ul class="blockList"><li class="blockList">
+<h3><a name="javamon-">javamon</a></h3>
+<pre>public&nbsp;javamon(String host, int port)</pre>
+<div class="block">Allocates a new <code>javamon</code> object. The HTTP listener will bind to the specified <code>host</code> (hostname or IP address) and
+<code>port</code> number after calling <code>start()</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>host</code> - the HTTP listener hostname or IP address. If <code>null</code>, the listener is bound to <code>0.0.0.0</code>.</dd>
+<dd><code>port</code> - the HTTP listener port number, or <code>0</code> to use a port number that is automatically allocated.</dd>
+</dl>
+</li>
+</ul>
+<ul class="blockList"><li class="blockList">
+<a id="method.detail"></a>
+<h2>Method Details</h2>
+<ul class="blockList"><li class="blockList">
+<h3><a id="shut()">shut</a></h3>
+<div class="memberSignature"><span class="modifiers">public final</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">shut</span>()</div>
+<div class="block">Signal the HTTP listener to shutdown gracefully. Does nothing if the listener is already shutting down or already stopped.
+This method should be called before exiting the main thread.</div>
+</li>
+<li class="blockList">
+<h3><a id="start()">start</a></h3>
+<div class="memberSignature"><span class="modifiers">public final</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">start</span>()</div>
+<div class="block">Launch the HTTP endpoint in a separate thread.</div>
+</li>
+<li class="blockList">
+<h3><a id="main()">main</a></h3>
+<div class="memberSignature"><span class="modifiers">public static final</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">main</span>()</div>
+<div class="block">Launch javamon as a wrapper from the command line. The following system properties are supported:
+<table style="border-style:none;margin-left:50px">
+<tr><th>Property<th>Description<th>Default value
+<tr class="rowColor"><td>jm.host<td>The HTTP endpoint hostname or IP address<td>127.0.0.1
+<tr class="rowColor"><td>jm.port<td>The HTTP endpoint port<td>9091
+<tr class="rowColor"><td>jm.main<td>The Java application main class<td>
+</table>
+<p><b>Note:</b> For security reasons, the default javamon host is not <code>0.0.0.0</code>, but <code>127.0.0.1</code>.
+Therefore, if the <code>jm.host</code> configuration parameter is missing or empty, the HTTP endpoint will be bound to localhost.
+This means that by default it will be accessible only if Prometheus is running on the same host.
+</div>
+</li>
+</ul>
+</section>
+<hr>
+<p><center><small>&#169; 2025 <a href="https://www.celersms.com/org/vkamenar.htm">Vladimir Kame&#241;ar</a>
+<br>All rights reserved</small></center>&nbsp;<br>
+&nbsp;<br>
+</main>
+</body>
+</html>
