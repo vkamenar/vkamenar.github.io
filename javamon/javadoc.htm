@@ -97,7 +97,7 @@ Javamon exposes an HTTP endpoint compatible with <a href="https://github.com/pro
 </thead>
 <tbody>
 <tr class="altColor">
-<td class="colFirst" scope="row"><code><a class="membNLink" href="#javamon-">javamon</a>(String host, int port)</code>
+<td class="colFirst" scope="row"><code><a class="membNLink" href="#javamon">javamon</a>(String host, int port)</code>
 <td class="colLast">
 <div class="block">Allocates a new <code>javamon</code> object configured for the given host or IP address and port number.
 The HTTP listener will bind after calling <code>start()</code> on this object.</div>
@@ -118,17 +118,17 @@ The HTTP listener will bind after calling <code>start()</code> on this object.</
 <tbody>
 <tr class="altColor" id="i0">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><a class="membNLink" href="#shut()">shut</a>()</code></th>
+<th class="colSecond" scope="row"><code><a class="membNLink" href="#shut">shut</a>()</code></th>
 <td class="colLast">
 <div class="block">Signal the HTTP listener to shutdown gracefully.</div>
 <tr class="rowColor" id="i1">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><a class="membNLink" href="#start()">start</a>()</code></th>
+<th class="colSecond" scope="row"><code><a class="membNLink" href="#start">start</a>()</code></th>
 <td class="colLast">
 <div class="block">Launch the HTTP endpoint in a separate thread.</div>
 <tr class="altColor" id="i2">
 <td class="colFirst"><code>static void</code></td>
-<th class="colSecond" scope="row"><code><a class="membNLink" href="#main()">main</a>(String[] args)</code></th>
+<th class="colSecond" scope="row"><code><a class="membNLink" href="#main">main</a>(String[] args)</code></th>
 <td class="colLast">
 <div class="block">Launch javamon as a wrapper from the command line.</div>
 </tbody>
@@ -148,14 +148,15 @@ The HTTP listener will bind after calling <code>start()</code> on this object.</
 <br>&nbsp;
 <h2>Constructor Details</h2>
 <ul class="bL"><li class="bL">
-<h3><a name="javamon-">javamon</a></h3>
+<h3><a id="javamon">javamon</a></h3>
 <pre>public&nbsp;javamon(String host, int port)</pre>
 <div class="block">Allocates a new <code>javamon</code> object. The HTTP listener will bind to the specified <code>host</code> (hostname or IP address) and
 <code>port</code> number after calling <code>start()</code>.</div>
 <dl>
 <dt class="paramLabel">Parameters:</dt>
 <dd><code>host</code> - the HTTP listener hostname or IP address. If <code>null</code>, the listener is bound to <code>0.0.0.0</code>.</dd>
-<dd><code>port</code> - the HTTP listener port number, or <code>0</code> to use a port number that is automatically allocated.</dd>
+<dd><code>port</code> - the HTTP listener port number, or <code>0</code> to use a port number that is automatically allocated.
+If the value is outside the [0..65535] range, the default port is 9091.</dd>
 </dl>
 </li>
 </ul>
@@ -163,13 +164,13 @@ The HTTP listener will bind after calling <code>start()</code> on this object.</
 <br>&nbsp;
 <h2>Method Details</h2>
 <ul class="bL"><li class="bL">
-<h3><a id="shut()">shut</a></h3>
+<h3><a id="shut">shut</a></h3>
 <div class="memberSign"><span class="modifiers">public final</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">shut</span>()</div>
 <div class="block">Signal the HTTP listener to shutdown gracefully. Does nothing if the listener is already shutting down or already stopped.
 This method should be called before exiting the main thread. This method doesn't block.</div>
 </li>
 <li class="bL">
-<h3><a id="start()">start</a></h3>
+<h3><a id="start">start</a></h3>
 <div class="memberSign"><span class="modifiers">public final</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">start</span>()</div>
 <div class="block">Launch the HTTP endpoint in a separate thread. This method must be called at most once on this <code>javamon</code> object.</div>
 <dl>
@@ -178,7 +179,7 @@ This method should be called before exiting the main thread. This method doesn't
 </dl>
 </li>
 <li class="bL">
-<h3><a id="main()">main</a></h3>
+<h3><a id="main">main</a></h3>
 <div class="memberSign"><span class="modifiers">public static final</span>&nbsp;<span class="returnType">void</span>&nbsp;<span class="memberName">main</span>()</div>
 <div class="block">Launch javamon as a wrapper from the command line. This method should not be called directly,
 if <code>javamon</code> is used as a Java library.
