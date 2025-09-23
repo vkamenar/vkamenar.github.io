@@ -26,7 +26,7 @@
 <div style='background:#FFF;text-align:justify;padding:10px' itemscope itemtype="https://schema.org/CreativeWork">
 The <b>Multimedia Messaging Service</b> (MMS) is an evolution of the SMS. It supports text with multimedia images, slide show, sound and video. The visual
 content displays and plays within the recipients messaging application.
-<p>MMS is supported in most mobiles manufactured since the end of 2001, including feature phones and smartphones: Android, Symbian, Blackberry, Windows Phone,
+<p>Most mobiles manufactured since the end of 2001 support MMS. This includes feature phones and smartphones: Android, Symbian, Blackberry, Windows Phone,
 among others. Apple supports MMS since iOS 3, but SMIL formatting is ignored. Apple uses predefined formatting templates to manage the layout and transitions of
 the MMS contents instead of the SMIL formatting attached to the MMS file. Some devices support <a href="https://www.celersms.com/html-mms.htm">combining MMS with
 HTML</a> markup.
@@ -41,6 +41,8 @@ This tool can be used in Windows or Linux (x86). It doesn't require any addition
 <p>Please, check the <a href="https://github.com/ThalesGroup/MMS-compiler/blob/main/Overview.pdf">Overview</a> and
 <a href="https://github.com/ThalesGroup/MMS-compiler/blob/main/UserGuide.pdf">User's Guide</a> for more details and practical recommendations on how to compile
 MMS files for compatibility with different mobiles.
+<p>Typically, an MMS file is not viewable directly in the messaging application. Instead, it must be published to a webserver. A notification is then sent
+to the mobile to download and reproduce the MMS.
 <p>When publishing an MMS file to a webserver, the following conditions should be met:
 <ul>
 <li>The URL must be accessible through the MMS APN configured in the mobile. If it is blocked by the operator, a temporary workaround is to configure the Internet
