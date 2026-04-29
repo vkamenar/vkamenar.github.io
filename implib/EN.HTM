@@ -30,7 +30,7 @@ h1{font-size:125%;margin:4px}
 <div id="top" itemscope itemtype="https://schema.org/Article"><meta itemprop="inLanguage" content="en">
 <center><span class='mnu'>[ English | <a href='ES.HTM'>Espa&#241;ol</a> | <a href='RU.HTM'>Pycc&#954;u&#250;</a> ]</span>
 <h1 itemprop="headline">ImpLib SDK Guide</h1><span class='mnu'>[ <a href='https://github.com/vkamenar/implib-sdk/releases'>Download</a> | <a href='https://github.com/vkamenar/implib-sdk/discussions'>Discussions</a> ]</span></center>
-<p align="right">Publication date: <b itemprop="datePublished">2007-02-01</b><br>Last update: <b itemprop="dateModified">2025-04-20</b><br>Author: <span itemprop="author" itemscope itemtype="https://schema.org/Person"><a itemprop="url" href="https://www.celersms.com/org/vkamenar.htm"><b itemprop="name"><link itemprop="sameAs" href="https://www.facebook.com/vladimir.kamenar.1"><link itemprop="sameAs" href="https://x.com/KamenarVladimir"><link itemprop="sameAs" href="https://www.linkedin.com/in/vladimir-kamenar/"><link itemprop="sameAs" href="https://www.wikidata.org/wiki/Q106606516">Vladimir Kame&#241;ar</b></a></span>
+<p align="right">Publication date: <b itemprop="datePublished">2007-02-01</b><br>Last update: <b itemprop="dateModified">2026-04-29</b><br>Author: <span itemprop="author" itemscope itemtype="https://schema.org/Person"><a itemprop="url" href="https://www.celersms.com/org/vkamenar.htm"><b itemprop="name"><link itemprop="sameAs" href="https://www.facebook.com/vladimir.kamenar.1"><link itemprop="sameAs" href="https://x.com/KamenarVladimir"><link itemprop="sameAs" href="https://www.linkedin.com/in/vladimir-kamenar/"><link itemprop="sameAs" href="https://www.wikidata.org/wiki/Q106606516">Vladimir Kame&#241;ar</b></a></span>
 <div class="nav">
 <a href="#0">Installation and usage</a>
 <br><a href="#1">How does it work?</a>
@@ -47,12 +47,12 @@ h1{font-size:125%;margin:4px}
 Its symbolic name is <code>dummy_function</code> and its ordinal is 20. Usually, it's not recommended to import a symbol by ordinal because the ordinal may
 change in a future version of the DLL. However, you can benefit from using ordinals if you know that the DLL version won't change or the DLL developer guarantees
 backward compatibility regarding the ordinals, e.g., you are the DLL developer and you keep the ordinals fixed in every subsequent release.
-Importing by ordinal significantly reduces the load time of an executable and makes the import section size smaller. By the way, if you plan to use the same DLL
+Importing by ordinal significantly improves the executable load time and makes the import section size smaller. By the way, if you plan to use the same DLL
 build, consider <a href="https://learn.microsoft.com/en-us/cpp/build/reference/bind">binding</a> your executables. Binding improves the load time even further.
 <li>Storing symbols from different DLL files in a single import library. For example, you can make a single import library containing the exported
 entries from KERNEL32, USER32, GDI32 and other common Windows API DLLs and name it something like win32api.lib. Then, you can always link to
 that single file instead of having to specify kernel32.lib, user32.lib, gdi32.lib and so on.
-<li>When accessing non-<i>stdcall</i> DLL functions from Visual Basic 6, PureBasic and other popular development environments, sometimes the calling convention
+<li>When accessing non-<i>stdcall</i> DLL functions from Visual Basic 6, PureBasic and other development environments, sometimes the calling convention
 might not be supported. ImpLib SDK is able to generate adaptation code to convert CDECL and other calling conventions to STDCALL with very little overhead.
 <li>ImpLib SDK can generate libraries without <i>original thunk</i>, also known as "stripped" libraries. When using a library without original thunk, the final
 executable won't contain the thunk payload. Therefore, you can produce smaller executable files by using this kind of libraries. To remove the original thunk,
@@ -344,5 +344,5 @@ You can find multiple PureBasic OpenAL examples in the <a href="/pbopenal/">Pure
 </div>
 </div>
 <div class="btop"><a href="#top">Back to Top</a></div>
-<center><small>&#169; 2006 - 2025 <a href="https://www.celersms.com/org/vkamenar.htm">Vladimir Kame&#241;ar</a>
+<center><small>&#169; 2006 - 2026 <a href="https://www.celersms.com/org/vkamenar.htm">Vladimir Kame&#241;ar</a>
 <br>All rights reserved</small></center></body></html>
